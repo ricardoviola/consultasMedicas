@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Usuários</title>
+</head>
+<body page="lista">
+    <div id="listaRegistos">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Fone</th>
+                    <th></th>
+
+                    
+                </tr>
+
+            </thead>
+
+            <tbody id="listaRegistrosBody"></tbody>
+        </table>
+
+        <div>
+            <button onclick="visualizar('cadastro', true)">Novo usuário</button>
+            <button onclick="visualizar('cadastroConsultas', true)">Marcar consulta</button>
+            <button onclick="visualizar('listaConsultas', false)">Listar consultas</button>
+
+        </div>
+
+    </div>
+
+    <div id="listaConsultas">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Especialidades</th>                   
+                </tr>
+
+            </thead>
+            <tbody id="listaConsultasBody"></tbody>
+        </table>
+        <button onclick="visualizar('lista', false)">Voltar</button>
+    </div>
+
+    <div id="cadastroConsultas">
+        <form>
+            <label for="pacientes">Escolha o paciente</label>
+            <div>
+                <input type="hidden" class="text-input" readonly id="idConsulta"/>
+            </div>
+            
+            <select  name="nomePaciente" id="dropDownPacientes">
+            </select>
+            <br><br>
+
+            <label for="especialidade">Escolha a especialidade</label>
+            <select  name="nomeEspecialidade" id="dropDownEspecialidades">
+            </select>
+            <br><br>
+        
+            <label>
+              Escolha a melhor data para sua consulta:
+              <input  id="data" type="date" name="data" min="2023-07-01" max="2023-12-31" required />
+              <span class="validity"></span>
+            </label>
+            <br><br>
+
+            <label for="appt">Selecine o horário:</label>
+            <input type="time" id="hora" name="hora">
+            <p>
+                <button onclick="visualizar('listaConsultas', false)">Submit</button>
+            </p>  
+        </form>          
+    </div>
+
+    <form id="cadastroRegistro">
+        <div class="label">
+            
+            <div>
+                <input type="hidden" class="text-input" readonly id="id"/>
+            </div>
+
+        <div class="label">
+            <div>Nome</div>
+            <div>
+                <input id="nome" class="text-input"/>
+            </div>
+
+        <div class="label">
+                <div>Fone</div>
+                <div>
+                     <input type="tel" class="text-input" id="fone"/>
+                </div>
+        </div>
+
+        <div>
+            <button onclick="visualizar('cadastro')">Salvar</button>
+            <button onclick="visualizar('lista')" class="cinza" type="button">Cancelar</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="scriptPaciente.js"></script>
+    <script src="scriptConsulta.js"></script>
+    <script src="scriptEspecialidade.js"></script>
+
+
+</body>
+</html>
