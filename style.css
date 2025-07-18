@@ -1,0 +1,83 @@
+/*Inicializando página/ID para ficar invisível
+*/
+#cadastroConsultas{display: none;}
+
+#listaConsultas{display: none;}
+
+#listaRegistos{display: none;}
+
+#cadastroRegistro{display: none;}
+
+
+/*Quando receber página especificada mostra elemento com ID específico
+*/
+body[page=cadastroConsultas] #cadastroConsultas{display: block;}
+
+body[page=listaConsultas] #listaConsultas{display: block;}
+
+body[page=lista] #listaRegistos{display: block;}
+
+body[page=cadastro] #cadastroRegistro{display: block;}
+
+
+/*Estilos gerais
+*/
+body {
+    font-size: 14px;
+ 
+
+}
+
+table {
+    width: 100%;
+
+}
+
+table th,
+table td {
+    font-size: 14px;
+    border: solid 1px #ccc;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #07a;
+    color: #fff;
+    margin: 3px;
+    padding: 10px 15px;
+}
+
+button.cinza {
+    background-color: #ccc;
+    color: #666;
+
+}
+
+button.vermelho {
+    background-color: #a00;
+    color: #fff;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input {
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.text-input {
+    width: 300px;
+}
+
+.label {
+    padding-top: 30px;
+
+}
+
+
